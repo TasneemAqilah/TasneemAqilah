@@ -1,0 +1,259 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /*Step 7 change the background so that the white text can be seen*/
+  background-color: #f5f5dc;
+  font-family: Georgia, serif;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a {
+  margin-left: 1rem;
+}
+
+.icon {
+  width: 40px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.btn {
+  /*Step 3 Set the button color */
+  background-color: #e37729;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s; /*Create button transition*/
+}
+
+/*Step 4 Create hover state on the button
+When hover over button, button will increase in 0.3rem size*/
+.btn:hover {
+  letter-spacing: 0.3rem;
+}
+
+/*Step 6*/
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/*Step 5 Header Class
+Style the heading of the page*/
+.header {
+  display: flex; /*Flex displays items in raw form*/
+  align-items: center; /*Align items to the center*/
+  justify-content: space-between; /*push the elements to each end*/
+  padding: 1.5rem;
+}
+
+/*Step 8*/
+.header .logo a {
+  font-weight: bold;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+}
+
+/*Style the background spash*/
+.bg-orange {
+  width: 20rem;
+  height: 20rem;
+  background-color: #e37729;
+  position: absolute;
+  filter: blur(200px);
+  --webkit-filter: blur(
+    250px
+  ); /*In place in case the filter does not work on other browsers*/
+}
+
+/*Step 9 Edit the hero section*/
+.hero {
+  position: relative; /*brings forward the hero section*/
+  color: #000;
+  padding: 6rem 1.5rem; /*Creates a padding to align the hero section nicely*/
+}
+
+.hero article h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.hero article h1 span {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 1.5rem; /*Pushes the Welcome away from the H1*/
+  color: #e37729;
+}
+
+.hero article p {
+  /*Paragraph styling*/
+  margin-bottom: 2rem;
+  opacity: 0.75;
+  font-size: 0.9rem;
+}
+
+/*Changes the alignmnent of the arrow image*/
+.hero article a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-style: Lucida Bright;
+  font-size: 1.2rem;
+}
+
+.hero article a img {
+  width: 2rem;
+  margin-left: 2rem;
+}
+
+/*Step 1 Hide hero image on mobile*/
+.hero article:last-child {
+  display: none;
+}
+
+/*Next section*/
+.single-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1.5rem;
+}
+
+.single-card article {
+  padding: 0 1.5rem 2rem;
+}
+
+.single-card h2 {
+  margin: 1rem 0 0.625rem;
+}
+
+.single-card p {
+  opacity: 0.75;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.single-card ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none; /*Remove bullet points*/
+  padding-left: 0;
+}
+
+.single-card ul li:last-child {
+  margin-left: 2rem;
+}
+
+.projects {
+  margin-top: 5rem;
+}
+
+.hero-image,
+.star-image {
+  width: 400px;
+  height: auto;
+}
+
+footer {
+  padding: 4rem 0;
+}
+
+footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none; /*Remove bullet points*/
+}
+
+footer ul li {
+  margin: 0 1rem;
+}
+
+footer ul li img {
+  width: 50px;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .single-card {
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    justify-content: center;
+    background-color: #eed9c4; /*Add a border around the section*/
+  }
+}
+
+/*Step 2 Allow access to hero image2 when the width reaches 1024 px*/
+@media (min-width: 1024px) {
+  .header {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .hero {
+    /*Aligns the hero section to the svg hero image*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    padding: 1rem 1.5rem; /*Reduce the padding between hero and header*/
+    max-width: 1200px;
+    margin: auto; /*center it*/
+  }
+
+  .hero article h1 {
+    font-size: 4rem;
+    font-family: Lucida Bright;
+  }
+
+  .hero article p {
+    font-size: 1.5rem;
+  }
+  .hero article:last-child {
+    display: block;
+  }
+}
+
+/*Media Query for mobile sizes*/
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .single-card {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to start */
+  }
+
+  .single-card article {
+    padding: 1rem 0; /* Adjust padding for stacked layout */
+  }
+
+  /*Adjust image sizing*/
+  .star-image,
+  .hero-image {
+    width: 100%; /* Make the images responsive */
+    max-width: 300px; /* You can set a max width for mobile */
+    margin-right: 0; /* Remove right margin for stacked layout */
+  }
+
+  .projects {
+    margin-top: 2rem; /* Adjust margin for better spacing */
+  }
+}
